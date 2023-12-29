@@ -1,0 +1,33 @@
+.underline{
+    text-decoration: underline;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+
+/* .vr {
+    border-left: 2px solid gainsboro;
+    height:100%;
+    } */
+
+.profile_nav{
+    border-right: 1px solid #c5c5c5;
+    padding: 20px;
+    text-align: right;
+}
+
+.profile_wrap{
+    padding: 16px 5px;
+}
+
+.my_vehicles_list tr.vehicle_listing{
+    padding: 0px;
+    margin: 0 0 50px;
+}
+
+
+.vehicle_status{
+    float:left;
+    text-align: right;
+    width: 25%;
+}
