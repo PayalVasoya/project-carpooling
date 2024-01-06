@@ -1,8 +1,15 @@
 <?php
   require_once('includes/connection.php');
   session_start();
-  $sql = "SELECT * FROM tbl_brands";
-  $query = mysqli_query($conn,$sql);
+  if(isset($_GET['brand_id'])){
+    $id = $_GET['brand_id'];
+    $del = "delete from tbl_brands where brand_id='$id'";
+    $exe = mysqli_query($conn,$del);
+    echo "<script>
+          alert('Deleted successfully')</script>";
+      //header('Refresh:3,add-brand.php');
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +78,8 @@
                   </thead>
                   <tbody>
                     <?php
+                    $sql = "SELECT * FROM tbl_brands";
+                    $query = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($query))
                     {
                     ?>
@@ -79,10 +88,10 @@
                       <td><?php echo $row['brand_name'];?></td>
                       <td colspan="2">
                        
-                        <a href="<?php echo $row['brand_id'];?>">
+                        <a href="edit-brand.php?brand_id=<?php echo $row['brand_id'];?>">
                           <i class="fas fa-edit"></i>
                         </a>|
-                        <a href="<?php echo $row['brand_id'];?>">
+                        <a href="view-brands.php?brand_id=<?php echo $row['brand_id'];?>">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

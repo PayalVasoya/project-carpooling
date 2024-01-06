@@ -2,9 +2,16 @@
   require_once('includes/connection.php');
 
   session_start();
+  if(isset($_GET['fule_id'])){
+    $fule_id = $_GET['fule_id'];
+    $del = "delete from tbl_fule_types where fule_id='$fule_id'";
+    $exe = mysqli_query($conn,$del);
+    echo "<script>
+          alert('Deleted successfully')</script>";
+      //header('Refresh:3,add-brand.php');
+  }
+  
 
-  $sql = "SELECT * FROM tbl_fule_types";
-  $query = mysqli_query($conn,$sql);
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +80,9 @@
                   </thead>
                   <tbody>
                     <?php
+                    
+                    $sql = "SELECT * FROM tbl_fule_types";
+                    $query = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($query))
                     {
                     ?>
@@ -80,10 +90,10 @@
                       <td><?php echo $row['fule_id'];?></td>
                       <td><?php echo $row['fule_name'];?></td>
                       <td colspan="2">
-                        <a href="<?php echo $row['fule_id'];?>">
+                        <a href="edit-fule-type.php?fule_id=<?php echo $row['fule_id'];?>">
                           <i class="fas fa-edit"></i>
                         </a>|
-                        <a href="<?php echo $row['fule_id'];?>">
+                        <a href="view-fule-types.php?fule_id=<?php echo $row['fule_id'];?>">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

@@ -2,9 +2,16 @@
   require_once('includes/connection.php');
 
   session_start();
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $del = "delete from tbl_transmission_type where transmission_id='$id'";
+    $exe = mysqli_query($conn,$del);
+    echo "<script>
+          alert('Deleted successfully')</script>";
+      //header('Refresh:3,add-brand.php');
+  }
   
-  $sql = "SELECT * FROM tbl_transmission_type";
-  $query = mysqli_query($conn,$sql);
+ 
 ?>
 
 <!DOCTYPE html>
@@ -68,26 +75,26 @@
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>transmissionName</th>
-                      <th colspan="3">Action</th>
+                      <th colspan="2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
+                     $sql = "SELECT * FROM tbl_transmission_type";
+                     $query = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($query))
                     {
                     ?>
                     <tr>
                       <td><?php echo $row['transmission_id'];?></td>
                       <td><?php echo $row['transmission_name'];?></td>
-                      <td colspan=3>
-                        <a class="btn btn-app" href="<?php echo $row['transmission_id'];?>">
-                          <i class="fas fa-book"></i> ReadTransmission
-                        </a>
-                        <a class="btn btn-app" href="<?php echo $row['transmission_id'];?>">
-                          <i class="fas fa-edit"></i> EditTransmission
-                        </a>
-                        <a class="btn btn-app" href="<?php echo $row['transmission_id'];?>">
-                          <i class="fas fa-eye"></i> ViewTransmission
+                      <td colspan="2">
+                        
+                        <a  href="edit-transmission-type.php?id=<?php echo $row['transmission_id'];?>">
+                          <i class="fas fa-edit"></i> 
+                        </a> | 
+                        <a  href="view-transmission.php?id=<?php echo $row['transmission_id'];?>">
+                          <i class="fas fa-trash"></i> 
                         </a>
                       </td>
                     </tr>
