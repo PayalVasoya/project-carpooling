@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2023 at 01:23 PM
+-- Generation Time: Jan 06, 2024 at 08:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,7 +45,16 @@ CREATE TABLE `tbl_auto` (
 --
 
 INSERT INTO `tbl_auto` (`auto_id`, `auto_title`, `brand_id`, `fule_id`, `transmission_id`, `seats`, `model_no`, `descriptions`, `auto_img`, `rent_per_hour`) VALUES
-(1, 'cheverolet', 1, 1, 1, 4, 'bc2023', 'dshfhsfshfhf', 'uploads/auto/car-1.jpg', 200);
+(1, 'Bajaj RE E TEC 9.0 Auto Rickshaw', 1, 1, 1, 3, 'Bajaj RE E TEC 9.0', 'Bajaj RE E TEC 9.0 is best-in-class Auto Rickshaw manufactured by Bajaj. This Auto Rickshaw from Bajaj is a good option for cleaner transportation.\n', 'uploads/auto/car-1.jpg', 200),
+(2, 'Bajaj Compact RE Auto Rickshaw', 1, 1, 1, 4, 'Bajaj Compact RE', 'Bajaj RE compact BS6 is an Auto Rickshaw manufactured by Bajaj, known for its best-in-class vehicles. It belongs to the Auto Rickshaws category of commercial vehicles. If you need the latest information about the RE Compact LPG 4S Bajaj Auto Ltd price, features, specifications and more. Simply explore Truck Junction to access all the technical details on Bajaj RE compact price in India.\n', 'uploads/auto/auto1.jpg', 300),
+(3, 'Bajaj Maxima C 3 Wheeler', 1, 1, 1, 4, 'Bajaj Maxima C', 'Bajaj Maxima C is a 3 Wheeler which is manufactured by Bajaj, which is known for its best-in-class vehicles. It belongs to the 3 Wheeler category of commercial vehicles.', 'uploads/auto/auto2.jpg', 200),
+(4, 'Bajaj Maxima Z Auto Rickshaw', 1, 1, 1, 4, 'Bajaj Maxima Z', 'Bajaj Maxima Z Auto rickshaw is a premium BS6 commercial vehicle built with the advanced technology with generations of trust. This Maxima auto offers a reliable power engine and power coupling that ensures minimum maintenance. Its superior fuel injection technology and 3 free services make it a worthwhile purchase. ', 'uploads/auto/auto3.jpg', 200),
+(5, 'Bajaj Maxima Z Auto Rickshaw', 1, 1, 1, 4, 'Bajaj Maxima Z', 'Bajaj Maxima Z Auto rickshaw is a premium BS6 commercial vehicle built with the advanced technology with generations of trust. This Maxima auto offers a reliable power engine and power coupling that ensures minimum maintenance. Its superior fuel injection technology and 3 free services make it a worthwhile purchase. ', 'uploads/auto/image_2.jpg', 200),
+(6, 'Mahindra Alfa Dx Auto Rickshaw', 2, 1, 1, 4, 'Mahindra Alfa Dx', 'Mahindra Alfa Dx Auto Rickshaw manufactured with advanced technological solutions that provides high performance.This model comes from Mahindra house, which is famous for its exceptional quality commercial vehicles. You can get Mahindra Alfa Dx Auto Rickshaw price, features, mileage, reviews, image and other details.', 'uploads/auto/auto2.jpg', 200),
+(7, 'Mahindra Alfa Champ Auto Rickshaw', 2, 1, 1, 4, 'Mahindra Alfa Champ', 'Mahindra Alfa Champ is a Auto Rickshaw which is manufactured by Mahindra, which is known for its best-in-class vehicles. It belongs to the Auto Rickshaw category of commercial vehicles.', 'uploads/auto/auto3.jpg', 200),
+(8, 'Mahindra Alfa Auto Rickshaw', 2, 1, 1, 4, 'Mahindra Alfa', 'Mahindra Alfa is a Auto Rickshaw which is manufactured by Mahindra, which is known for its best-in-class vehicles. It belongs to the Auto Rickshaw category of commercial vehicles. ', 'uploads/auto/auto1.jpg', 200),
+(9, 'Mahindra Treo Plus', 2, 1, 1, 4, 'Mahindra Treo Plus', 'Mahindra Treo Plus is best-in-class Auto Rickshaw manufactured by Mahindra. This Auto Rickshaw from Mahindra is a good option for cleaner transportation.', 'uploads/auto/image_3.jpg', 200),
+(10, 'Piaggio Ape City Auto Rickshaw', 3, 2, 1, 4, 'Piaggio Ape City', 'Piaggio Ape City is a Auto Rickshaw which is manufactured by Piaggio, which is known for its best-in-class vehicles. It belongs to the Auto Rickshaw category of commercial vehicles. ', 'uploads/auto/auto1.jpg', 200);
 
 -- --------------------------------------------------------
 
@@ -92,8 +101,11 @@ CREATE TABLE `tbl_brands` (
 --
 
 INSERT INTO `tbl_brands` (`brand_id`, `brand_name`, `created_at`) VALUES
-(1, 'bajaj', '2023-12-23 07:14:11'),
-(2, 'mahindra', '2023-12-23 07:14:25');
+(1, 'Bajaj', '2024-01-02 05:23:12'),
+(2, 'Mahindra ', '2024-01-02 05:24:07'),
+(3, 'Piaggio', '2024-01-02 05:29:48'),
+(4, 'Atul Auto', '2024-01-02 05:30:06'),
+(5, 'TVS Auto', '2024-01-02 05:30:17');
 
 -- --------------------------------------------------------
 
@@ -370,7 +382,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_auto`
 --
 ALTER TABLE `tbl_auto`
-  MODIFY `auto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `auto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_booking`
@@ -382,7 +394,7 @@ ALTER TABLE `tbl_booking`
 -- AUTO_INCREMENT for table `tbl_brands`
 --
 ALTER TABLE `tbl_brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_cities`
