@@ -1,8 +1,15 @@
 <?php
   require_once('includes/connection.php');
   session_start();
-  $sql = "SELECT * FROM tbl_cities";
-  $query = mysqli_query($conn,$sql);
+  if(isset($_GET['city_id'])){
+    $id = $_GET['city_id'];
+    $del = "delete from tbl_cities where city_id='$id'";
+    $exe = mysqli_query($conn,$del);
+    echo "<script>
+          alert('Deleted successfully')</script>";
+      //header('Refresh:3,add-brand.php');
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +78,8 @@
                   </thead>
                   <tbody>
                     <?php
+                      $sql = "SELECT * FROM tbl_cities";
+                      $query = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($query))
                     {
                     ?>
@@ -78,10 +87,10 @@
                       <td><?php echo $row['city_id'];?></td>
                       <td><?php echo $row['city_name'];?></td>
                       <td colspan="2">
-                        <a href="<?php echo $row['city_id'];?>">
+                        <a href="edit-city.php?city_id=<?php echo $row['city_id'];?>">
                           <i class="fas fa-edit"></i>
                         </a> | 
-                        <a href="<?php echo $row['city_id'];?>">
+                        <a href="view-city.php?city_id=<?php echo $row['city_id'];?>">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>
